@@ -1,0 +1,99 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  apk:
+    name: Build installable APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      # Works whether the project files are uploaded normally or as one KinKeep zip in the repository root.
+      - name: Find the project
+        shell: bash
+        run: |
+          if [ -f app/build.gradle.kts ]; then
+            echo "PROJECT_DIR=." >> "$GITHUB_ENV"
+          else
+            ZIP=$(ls ./*.zip 2>/dev/null | head -n 1 || true)
+            if [ -z "$ZIP" ]; then
+              echo "::error::No project found. Upload the KinKeep zip file to the main page of this repository."
+              exit 1
+            fi
+            mkdir -p _src
+            unzip -q "$ZIP" -d _src
+            SETTINGS=$(find _src -name settings.gradle.kts | head -n 1)
+            echo "PROJECT_DIR=$(dirname "$SETTINGS")" >> "$GITHUB_ENV"
+          fi
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Prepare Android SDK
+        shell: bash
+        run: |
+          SDKM="${ANDROID_HOME:-/usr/local/lib/android/sdk}/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKM" --licenses > /dev/null || true
+          "$SDKM" "platforms;android-35" "build-tools;35.0.0" > /dev/null || true
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build debug APK
+        shell: bash
+        run: |
+          cd "$PROJECT_DIR"
+          gradle :app:assembleFullDebug --stacktrace --console=plain 2>&1 | tee "$GITHUB_WORKSPACE/build.log"
+
+      - name: Show build errors
+        if: failure()
+        shell: bash
+        run: |
+          {
+            echo "## The build failed"
+            echo "Copy everything in the box below and send it to Claude:"
+            echo '```'
+            if [ -f "$GITHUB_WORKSPACE/build.log" ]; then
+              grep -E "^e: |error:|FAILED|What went wrong|Execution failed|Caused by|Unresolved|Could not" "$GITHUB_WORKSPACE/build.log" | head -n 80
+            else
+              echo "The build did not start. Open the red step above and copy its last 30 lines instead."
+            fi
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KinKeep-debug-apk
+          path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/full/debug/*.apk
+          if-no-files-found: error
+
+      - name: Build optimised release APK (test-signed)
+        id: release
+        continue-on-error: true
+        shell: bash
+        run: |
+          cd "$PROJECT_DIR"
+          gradle :app:assembleFullRelease --stacktrace --console=plain 2>&1 | tee "$GITHUB_WORKSPACE/release.log"
+
+      - uses: actions/upload-artifact@v4
+        if: steps.release.outcome == 'success'
+        with:
+          name: KinKeep-release-apk-test-signed
+          path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/full/release/*.apk
+
+      - name: Done
+        if: success()
+        run: |
+          {
+            echo "## APK ready"
+            echo "Scroll to **Artifacts** at the bottom of this page and download **KinKeep-debug-apk**."
+            echo "Unzip it and copy the .apk file to your Android phone to install it."
+          } >> "$GITHUB_STEP_SUMMARY"
