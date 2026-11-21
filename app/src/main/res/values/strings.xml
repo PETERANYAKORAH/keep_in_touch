@@ -1,0 +1,196 @@
+<resources>
+    <string name="app_name">KinKeep</string>
+    <string name="tagline">Stay close to the people who matter.</string>
+
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="tab_people">People</string>
+
+    <string name="import_button">Import contacts and call history</string>
+    <string name="importing">Importing…</string>
+    <string name="rationale_title">Why KinKeep asks for access</string>
+    <string name="rationale_body">KinKeep reads your contacts and call history to work out how often you speak to each person. Everything is analysed on your phone. KinKeep has no internet access and nothing ever leaves your device. Notifications let it remind you to reach out.</string>
+    <string name="continue_action">Continue</string>
+    <string name="cancel">Not now</string>
+    <string name="sync_result">Imported %1$d new contacts and processed %2$d calls.</string>
+    <string name="sync_result_contacts">Imported %1$d new contacts.</string>
+    <string name="sync_failed">Import failed: %1$s</string>
+    <string name="sync_no_permission">Grant contacts and call log access to import.</string>
+
+    <string name="dash_title">Connection health</string>
+    <string name="dash_empty">No people are tracked yet. Open People to import your contacts and choose who to keep close.</string>
+    <string name="section_reach_out">Reach out today</string>
+    <string name="all_caught_up">You are all caught up. Nice work.</string>
+    <string name="section_missed">Missed calls to return</string>
+    <string name="section_weekly">Last 8 weeks</string>
+    <string name="weekly_hint">Conversations per week, oldest to newest</string>
+    <string name="weekly_desc">Conversations per week, oldest to newest: %1$s</string>
+    <string name="action_call">Call</string>
+    <string name="action_message">Message</string>
+
+    <string name="people_tracked">Tracked (%1$d)</string>
+    <string name="people_untracked">Not tracked (%1$d)</string>
+    <string name="search_hint">Search by name</string>
+    <string name="people_empty">Nobody to show here yet.</string>
+    <string name="untracked_hint">Tap a person and choose a circle to start keeping in touch.</string>
+
+    <string name="detail_back">Back</string>
+    <string name="detail_spoke">I spoke to them</string>
+    <string name="detail_circle">Circle</string>
+    <string name="detail_pick_circle">Choose a circle to start tracking this person.</string>
+    <string name="detail_use_default">Use default</string>
+    <string name="detail_pause">Pause reminders for this person</string>
+    <string name="detail_notes">Notes</string>
+    <string name="detail_save">Save</string>
+    <string name="detail_history">History</string>
+    <string name="detail_no_history">No history yet.</string>
+    <string name="score_label">Score %1$d</string>
+
+    <string name="log_title">Log a conversation</string>
+    <string name="log_i_reached">I reached out</string>
+    <string name="log_they_reached">They reached out</string>
+    <string name="log_minutes">Minutes (optional)</string>
+    <string name="log_note">Note (optional)</string>
+
+    <string name="hist_incoming">Incoming call</string>
+    <string name="hist_outgoing">Outgoing call</string>
+    <string name="hist_missed">Missed call</string>
+    <string name="hist_manual_out">You reached out</string>
+    <string name="hist_manual_in">They reached out</string>
+
+    <string name="no_contact_yet">No contact recorded yet</string>
+    <plurals name="last_spoke_days">
+        <item quantity="one">Last spoke %d day ago</item>
+        <item quantity="other">Last spoke %d days ago</item>
+    </plurals>
+    <plurals name="missed_to_return">
+        <item quantity="one">%d missed call to return</item>
+        <item quantity="other">%d missed calls to return</item>
+    </plurals>
+    <plurals name="tracked_people">
+        <item quantity="one">%d person tracked</item>
+        <item quantity="other">%d people tracked</item>
+    </plurals>
+    <plurals name="cadence_days">
+        <item quantity="one">Remind me every %d day</item>
+        <item quantity="other">Remind me every %d days</item>
+    </plurals>
+
+    <string name="tab_settings">Settings</string>
+
+    <string name="channel_name">Reminders</string>
+    <string name="channel_description">Gentle reminders to stay in touch with the people who matter.</string>
+    <string name="notif_snooze">Snooze</string>
+    <string name="notif_spoke">Already spoke</string>
+    <string name="notif_birthday_title">%1$s\'s birthday</string>
+    <string name="notif_missed_title">Missed call from %1$s</string>
+    <string name="test_title">KinKeep test</string>
+    <string name="test_body">Reminders are working. You will get a gentle nudge when someone needs a call.</string>
+
+    <string name="snoozed_until">Reminders snoozed until %1$s</string>
+    <string name="snooze_clear">Clear snooze</string>
+    <string name="snooze_tomorrow">Snooze until tomorrow</string>
+    <string name="snooze_week">Snooze for a week</string>
+
+    <string name="widget_title">Reach out today</string>
+    <string name="widget_description">The people most due for a call.</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_reminders">Reminders</string>
+    <string name="settings_default_time">Reminder time</string>
+    <string name="settings_quiet_start">Quiet hours start</string>
+    <string name="settings_quiet_end">Quiet hours end</string>
+    <string name="settings_quiet_hint">No reminders are sent during quiet hours. Set the same start and end to turn them off.</string>
+    <string name="settings_daily_cap">Most reminders per day</string>
+    <string name="settings_pause_week">Pause reminders for a week</string>
+    <string name="settings_paused_until">Paused until %1$s</string>
+    <string name="settings_resume">Resume</string>
+    <string name="settings_last_check">Last reminder check: %1$s</string>
+    <string name="settings_never_checked">Reminders have not run yet.</string>
+    <string name="settings_test">Send a test notification</string>
+    <string name="settings_allow_notifications">Allow notifications</string>
+    <string name="settings_notifications_off">Notifications are turned off, so reminders cannot reach you.</string>
+    <string name="settings_battery_title">Keep reminders reliable</string>
+    <string name="settings_battery_body">Some phones, including Samsung, Xiaomi, Tecno, Infinix, Oppo, Vivo and Huawei, stop background apps to save battery. Set KinKeep to Unrestricted battery use, allow Autostart if your phone has it, and lock KinKeep in the recent apps list.</string>
+    <string name="settings_battery_button">Open battery settings</string>
+    <string name="settings_app_button">Open app settings</string>
+    <string name="settings_privacy">KinKeep has no internet permission. Your contacts and call history never leave this phone.</string>
+
+    <string name="lock_title">KinKeep is locked</string>
+    <string name="lock_button">Unlock</string>
+    <string name="lock_prompt_title">Unlock KinKeep</string>
+    <string name="lock_prompt_subtitle">Confirm it is you</string>
+    <string name="settings_lock">App lock</string>
+    <string name="settings_lock_hint">Ask for your fingerprint, face or phone screen lock when KinKeep opens. Screenshots are also blocked.</string>
+    <string name="settings_lock_unavailable">Set a screen lock on your phone to use app lock.</string>
+
+    <string name="settings_goal">Weekly goal (people)</string>
+    <string name="settings_summary">Sunday weekly summary</string>
+    <string name="dash_goal">Goal: talk to %1$d people a week to build a streak.</string>
+    <string name="summary_title">Your week in KinKeep</string>
+    <string name="summary_quiet">A quiet week. One short call is a great way to start the next one.</string>
+    <plurals name="summary_people">
+        <item quantity="one">You spoke with %d person this week.</item>
+        <item quantity="other">You spoke with %d people this week.</item>
+    </plurals>
+    <plurals name="summary_streak">
+        <item quantity="one">%d-week streak. Keep it going.</item>
+        <item quantity="other">%d-week streak. Keep it going.</item>
+    </plurals>
+
+    <string name="settings_backup_title">Backup and restore</string>
+    <string name="settings_backup_hint">Backups are encrypted with your password and saved to a file you choose. KinKeep cannot recover a lost password.</string>
+    <string name="settings_backup_create">Create backup</string>
+    <string name="settings_backup_restore">Restore backup</string>
+    <string name="settings_last_backup">Last backup: %1$s</string>
+    <string name="settings_never_backed_up">No backup yet.</string>
+    <string name="backup_password">Password</string>
+    <string name="backup_password_confirm">Repeat password</string>
+    <string name="backup_password_hint">Use at least 8 characters.</string>
+    <string name="backup_mismatch">The passwords do not match.</string>
+    <string name="backup_export_title">Protect your backup</string>
+    <string name="backup_export_body">Choose a password. You will need it to restore this backup.</string>
+    <string name="backup_restore_title">Restore backup</string>
+    <string name="backup_restore_body">Restoring replaces everything currently in KinKeep. Enter the backup password.</string>
+    <string name="backup_done">Backup saved.</string>
+    <string name="backup_failed">Backup failed: %1$s</string>
+    <string name="restore_done">Restored %1$d people and %2$d conversations. Tap Import on the People tab to reconnect with your contacts.</string>
+    <string name="restore_failed">Restore failed: %1$s</string>
+
+    <string name="settings_danger">Danger zone</string>
+    <string name="settings_wipe">Delete all data</string>
+    <string name="wipe_title">Delete all data?</string>
+    <string name="wipe_body">This permanently removes every contact record, call record, note and setting from KinKeep. Your phone\'s own contacts and call history are not touched. This cannot be undone.</string>
+    <string name="wipe_confirm">Delete everything</string>
+
+    <string name="onboarding_page">%1$d of %2$d</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_back">Back</string>
+    <string name="onboarding_skip">Skip for now</string>
+    <string name="onboarding_allow">Allow and import</string>
+    <string name="onboarding_title_1">Stay close to the people who matter</string>
+    <string name="onboarding_body_1">KinKeep notices how often you speak to family and friends, then gently reminds you when it is time to call. No guilt, just a friendly nudge.</string>
+    <string name="onboarding_title_2">Private by design</string>
+    <string name="onboarding_body_2">Everything stays on your phone. KinKeep has no internet access at all, so your contacts and call history can never leave your device. Your notes are encrypted.</string>
+    <string name="onboarding_title_3">Let us set it up</string>
+    <string name="onboarding_body_3">Allow access to your contacts, call history and notifications. KinKeep suggests who to keep close, and you choose who to track.</string>
+
+    <string name="settings_stale">Reminders have not checked in for %1$d hours. Your phone may be stopping KinKeep. Follow the tips below.</string>
+    <string name="oem_title">Tips for your %1$s phone</string>
+    <string name="oem_button">Open autostart settings</string>
+    <string name="oem_samsung">Open Settings, Battery, Background usage limits. Make sure KinKeep is not in Sleeping apps or Deep sleeping apps, and add it to Never sleeping apps.</string>
+    <string name="oem_xiaomi">Turn on Autostart for KinKeep. Then open Settings, Apps, KinKeep, Battery saver and choose No restrictions. Also lock KinKeep in the recent apps list.</string>
+    <string name="oem_oppo">Allow KinKeep to Auto-launch, and under Battery choose Allow background activity. Lock KinKeep in the recent apps list.</string>
+    <string name="oem_vivo">Allow KinKeep under Autostart, and under Battery choose High background power consumption or Allow. Lock KinKeep in the recent apps list.</string>
+    <string name="oem_huawei">In Settings, Apps, App launch, switch KinKeep to Manage manually and turn on Auto-launch, Secondary launch and Run in background.</string>
+    <string name="oem_transsion">Open Phone Master or Settings, Autostart manager, and allow KinKeep. Under Battery, set KinKeep to No restrictions and lock it in the recent apps list.</string>
+    <string name="oem_other">Allow KinKeep to run in the background and set its battery use to Unrestricted. Some phones call this Autostart or Protected apps.</string>
+    <string name="settings_diag_title">Diagnostics</string>
+    <string name="settings_diag_body">If something goes wrong, KinKeep keeps a short record of crashes on this phone. It holds no names, numbers or notes. You decide whether to share it.</string>
+    <string name="settings_diag_share">Share error log</string>
+    <string name="settings_diag_clear">Clear</string>
+    <string name="settings_diag_empty">No errors recorded.</string>
+    <string name="cd_decrease">Decrease %1$s</string>
+    <string name="cd_increase">Increase %1$s</string>
+    <string name="cd_cadence_fewer">Fewer days between reminders</string>
+    <string name="cd_cadence_more">More days between reminders</string>
+</resources>

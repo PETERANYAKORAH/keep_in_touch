@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Only the direct-download build reads the call log. Google Play does not allow this permission for
+         apps that are not the default dialer, so the "play" flavor leaves it out. -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+</manifest>

@@ -1,0 +1,11 @@
+<resources>
+    <!-- Wording for the Google Play build, which does not read the call history. -->
+    <string name="import_button">Import contacts</string>
+    <string name="rationale_body">KinKeep reads your contacts so you can choose who to keep close. Everything stays on your phone. KinKeep has no internet access, so nothing ever leaves your device. Notifications let it remind you to reach out.</string>
+    <string name="sync_no_permission">Allow contacts access to import.</string>
+    <string name="settings_privacy">KinKeep has no internet permission. Your contacts and notes never leave this phone.</string>
+    <string name="onboarding_body_1">KinKeep helps you keep up with family and friends. Log a conversation in one tap, and it gently reminds you when it is time to call. No guilt, just a friendly nudge.</string>
+    <string name="onboarding_body_2">Everything stays on your phone. KinKeep has no internet access at all, so your contacts and notes can never leave your device. Your notes are encrypted.</string>
+    <string name="onboarding_body_3">Allow access to your contacts and notifications. You choose who to keep close, then log a conversation whenever you speak.</string>
+    <string name="wipe_body">This permanently removes every contact record, logged conversation, note and setting from KinKeep. Your phone\'s own contacts are not touched. This cannot be undone.</string>
+</resources>
